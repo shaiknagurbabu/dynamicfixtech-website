@@ -1,6 +1,6 @@
 # DynamicFix IT Solutions Website
 
-A responsive customer-facing IT solutions website for DynamicFix Tech Innovation, built with React and Vite. It introduces web and mobile application development, data analytics, Salesforce CRM solutions and IT staffing, and includes the company's delivery approach, connected capabilities, stated commitments, FAQs, an interactive solution finder, a project-readiness checklist, WhatsApp click-to-chat and a light/dark theme toggle that remembers the visitor's choice.
+A responsive customer-facing IT solutions website for DynamicFix Tech Innovation, built with React and Vite. It introduces web and mobile application development, data analytics, Salesforce CRM solutions and IT staffing, and includes illustrative business-needs examples, the company's delivery approach, connected capabilities, stated commitments, FAQs, an interactive solution finder, a project-readiness checklist, WhatsApp click-to-chat and a light/dark theme toggle that remembers the visitor's choice.
 
 The registered office address is included from the supplied company profile. The company mark displayed in the header and favicon is the image opened from the supplied Google Maps link, stored locally at `frontend/public/dynamicfix-logo.jpg`; a simple monogram appears if the image cannot load. WhatsApp click-to-chat is linked to the supplied number using the standard `wa.me` URL; it does not use or expose a WhatsApp API token.
 

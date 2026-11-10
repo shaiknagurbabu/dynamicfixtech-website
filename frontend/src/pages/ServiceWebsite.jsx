@@ -105,6 +105,37 @@ const solutionGoals = [
   },
 ];
 
+const businessNeeds = [
+  {
+    number: "01",
+    category: "DIGITAL PRODUCTS",
+    title: "Give customers a clearer digital experience",
+    description: "When a service is difficult to access online, a well-planned web or mobile application can make key tasks easier to find and complete.",
+    prompt: "Explore web & mobile apps",
+  },
+  {
+    number: "02",
+    category: "DATA & DECISIONS",
+    title: "Bring useful information into view",
+    description: "When business data is spread across tools, analytics can help teams organize relevant information and explore it more clearly.",
+    prompt: "Explore data analytics",
+  },
+  {
+    number: "03",
+    category: "CUSTOMER WORKFLOWS",
+    title: "Make customer processes easier to manage",
+    description: "When customer details and follow-ups live in different places, CRM planning can help teams consider more connected workflows.",
+    prompt: "Explore Salesforce CRM",
+  },
+  {
+    number: "04",
+    category: "TEAM CAPACITY",
+    title: "Add technical skills around project needs",
+    description: "When a project needs additional technical capacity, IT staffing can help organizations explore talent aligned to their requirements.",
+    prompt: "Explore IT staffing",
+  },
+];
+
 const projectChecklist = [
   "Describe the business challenge you want to solve",
   "Choose the service area that best fits your goal",
@@ -309,6 +340,32 @@ function ServiceWebsite() {
                 </article>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="business-needs-section section-pad" id="business-needs">
+          <div className="service-container">
+            <div className="business-needs-heading">
+              <span className="eyebrow eyebrow-dark">PRACTICAL POSSIBILITIES</span>
+              <h2>Start with a challenge.<br /><em>Explore what could help.</em></h2>
+              <p>Every organization is different. These examples show how DynamicFix capabilities may relate to common business needs; the right approach depends on your goals and context.</p>
+            </div>
+            <div className="business-needs-grid">
+              {businessNeeds.map((need) => (
+                <article className="business-need-card" key={need.number}>
+                  <div className="business-need-meta">
+                    <span>{need.category}</span>
+                    <span>{need.number}</span>
+                  </div>
+                  <h3>{need.title}</h3>
+                  <p>{need.description}</p>
+                  <a href="#contact" aria-label={`${need.prompt}; contact DynamicFix`}>
+                    {need.prompt} <span>↗</span>
+                  </a>
+                </article>
+              ))}
+            </div>
+            <p className="business-needs-note">Illustrative examples only—not customer case studies or promised outcomes.</p>
           </div>
         </section>
 
@@ -535,6 +592,7 @@ function ServiceWebsite() {
           <div className="footer-links">
             <span>EXPLORE</span>
             <a href="#services">Our solutions</a>
+            <a href="#business-needs">Business needs</a>
             <a href="#solution-finder">Find a solution</a>
             <a href="#how-it-works">Our approach</a>
             <a href="#why-dynamicfix">Why DynamicFix</a>

@@ -468,6 +468,22 @@ a { color: inherit; text-decoration: none; }
 .connected-item p { max-width: 155px; margin: 0; color: #778a9c; font-size: 8px; line-height: 1.7; }
 .connected-arrow { position: absolute; top: 49px; right: -7px; z-index: 1; display: grid; width: 14px; height: 14px; place-items: center; border: 1px solid #dfeaf4; border-radius: 50%; background: #fff; color: #4a86b5; font-size: 9px; }
 
+.business-needs-section { background: #fff; }
+.business-needs-heading { display: grid; grid-template-columns: 1fr 1fr; column-gap: 55px; align-items: end; margin-bottom: 27px; }
+.business-needs-heading > .eyebrow { grid-column: 1 / -1; margin-bottom: 10px; }
+.business-needs-heading h2 { margin: 0; color: #203d5c; font: 700 31px/1.2 "Manrope", sans-serif; letter-spacing: -1.2px; }
+.business-needs-heading h2 em { color: #4787bd; font-family: var(--serif); font-weight: 500; }
+.business-needs-heading > p { max-width: 430px; margin: 0 0 3px; color: #6b8095; font-size: 10px; line-height: 1.8; }
+.business-needs-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.business-need-card { display: flex; min-height: 220px; flex-direction: column; padding: 16px; border: 1px solid #e1eaf3; border-radius: 5px; background: #fff; }
+.business-need-meta { display: flex; justify-content: space-between; gap: 8px; color: #6e8aa3; font-size: 7px; font-weight: 700; letter-spacing: .7px; }
+.business-need-meta span:last-child { color: #91a5b8; }
+.business-need-card h3 { margin: 22px 0 8px; color: #294762; font: 700 12px/1.45 "Manrope", sans-serif; }
+.business-need-card p { margin: 0 0 15px; color: #718499; font-size: 8px; line-height: 1.8; }
+.business-need-card > a { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; color: #246eb0; font-size: 8px; font-weight: 700; }
+.business-need-card > a:hover { color: #174e82; }
+.business-needs-note { margin: 12px 0 0; color: #8394a5; font-size: 7px; }
+
 .why-section { background: #fff; }
 .why-heading { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; align-items: end; margin-bottom: 28px; }
 .why-heading > .eyebrow { grid-column: 1 / -1; margin-bottom: 10px; }
@@ -496,20 +512,25 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 900px) {
   .connected-heading { column-gap: 28px; }
+  .business-needs-heading { column-gap: 28px; }
+  .business-needs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .connected-item { padding: 15px; }
   .faq-layout { gap: 38px; }
 }
 
 @media (max-width: 680px) {
   .main-nav { max-height: calc(100dvh - 105px); overflow-y: auto; }
-  .connected-heading, .why-heading { grid-template-columns: 1fr; gap: 0; }
-  .connected-heading > .eyebrow, .why-heading > .eyebrow { grid-column: auto; }
-  .connected-heading h2, .why-heading h2 { font-size: 26px; }
-  .connected-heading > p, .why-heading > p { margin-top: 9px; }
+  .connected-heading, .business-needs-heading, .why-heading { grid-template-columns: 1fr; gap: 0; }
+  .connected-heading > .eyebrow, .business-needs-heading > .eyebrow, .why-heading > .eyebrow { grid-column: auto; }
+  .connected-heading h2, .business-needs-heading h2, .why-heading h2 { font-size: 26px; }
+  .connected-heading > p, .business-needs-heading > p, .why-heading > p { margin-top: 9px; }
   .connected-flow { grid-template-columns: 1fr 1fr; }
   .connected-item { min-height: 165px; padding: 14px; border-right: 1px solid #e8eff6; border-bottom: 1px solid #e8eff6; }
   .connected-item:nth-child(even) { border-right: 0; }
   .connected-item:nth-last-child(-n + 2) { border-bottom: 0; }
+  .business-needs-grid { grid-template-columns: 1fr; gap: 9px; }
+  .business-need-card { min-height: 180px; padding: 15px; }
+  .business-need-card h3 { margin-top: 16px; }
   .connected-item h3 { margin-top: 17px; font-size: 10px; }
   .connected-arrow { display: none; }
   .why-grid { grid-template-columns: 1fr; gap: 9px; }
@@ -599,6 +620,7 @@ a { color: inherit; text-decoration: none; }
 .service-site[data-theme="dark"] .services-section,
 .service-site[data-theme="dark"] .why-section { background: #101a28; }
 .service-site[data-theme="dark"] .connected-section,
+.service-site[data-theme="dark"] .business-needs-section,
 .service-site[data-theme="dark"] .about-section,
 .service-site[data-theme="dark"] .faq-section,
 .service-site[data-theme="dark"] .solution-finder,
@@ -609,8 +631,10 @@ a { color: inherit; text-decoration: none; }
 .service-site[data-theme="dark"] .why-heading h2,
 .service-site[data-theme="dark"] .faq-heading h2,
 .service-site[data-theme="dark"] .finder-heading h2 { color: #e0ebf7; }
+.service-site[data-theme="dark"] .business-needs-heading h2 { color: #e0ebf7; }
 .service-site[data-theme="dark"] .section-intro,
 .service-site[data-theme="dark"] .connected-heading > p,
+.service-site[data-theme="dark"] .business-needs-heading > p,
 .service-site[data-theme="dark"] .why-heading > p,
 .service-site[data-theme="dark"] .faq-heading > p,
 .service-site[data-theme="dark"] .finder-heading > p,
@@ -619,15 +643,20 @@ a { color: inherit; text-decoration: none; }
 .service-site[data-theme="dark"] .service-footnote { color: #9dafc2; }
 .service-site[data-theme="dark"] .service-card,
 .service-site[data-theme="dark"] .connected-flow,
+.service-site[data-theme="dark"] .business-need-card,
 .service-site[data-theme="dark"] .why-card,
 .service-site[data-theme="dark"] .goal-option { border-color: #2d4158; background: #1b2b3f; }
 .service-site[data-theme="dark"] .service-card:hover { box-shadow: 0 12px 26px #00000030; }
 .service-site[data-theme="dark"] .service-card h3,
 .service-site[data-theme="dark"] .connected-item h3,
+.service-site[data-theme="dark"] .business-need-card h3,
 .service-site[data-theme="dark"] .why-card h3 { color: #dce8f4; }
 .service-site[data-theme="dark"] .service-card > p,
 .service-site[data-theme="dark"] .connected-item p,
+.service-site[data-theme="dark"] .business-need-card p,
 .service-site[data-theme="dark"] .why-card p { color: #adbed0; }
+.service-site[data-theme="dark"] .business-need-meta,
+.service-site[data-theme="dark"] .business-needs-note { color: #a4b7ca; }
 .service-site[data-theme="dark"] .service-tags span { background: #243a52; color: #b4cbe0; }
 .service-site[data-theme="dark"] .connected-item { border-color: #2d4158; }
 .service-site[data-theme="dark"] .connected-arrow { border-color: #3b526c; background: #1b2b3f; }
